@@ -1,0 +1,57 @@
+// 1. Let's rewrite the hidden & jumble variables as:
+	//a) var hidden = mystery2(multiplier) {
+    //multiplier *= input;
+    //return secret * multiplier;
+  //}
+  // this is also mystery (3) 
+  //b) var jumble = mystery4(bonus) {
+    // return param(6) + bonus;
+  //}
+  
+// 2. Since we know that the function mystery3 is = mystery3(param) {
+  //function mystery4(bonus) {
+  //  return param(6) + bonus;
+  // }
+  //  return mystery4;
+  // }
+  // Then mystery3(hidden) can be rewritten as the below since hidden replaces param:
+  // function mystery4(bonus) {
+  //    return hidden(6) + bonus;
+  // }
+  //  return mystery4;
+  // }
+  
+// 3. hidden(6) can be brokwn down as: 
+ // mystery2(6) {
+    //6 *= input;
+    //return secret * 6;
+  //}
+  
+// 4. plug 3 in as the input for mystery (3) per the instructions to get:
+// function mystery(input) {
+  // var secret = 4;
+  // 3 += 2; --> input = input + 2 (calculate to 5) 
+  // function mystery2(multiplier) {
+   // multiplier *= input; --> multiplier = multiplier * input (calculate to 6 * 5 = 30)
+  //  return secret * multiplier;
+ // }
+ // return mystery2;
+// }
+
+// 5. Combining number 3 and 4 above gives you:
+// 30 * 4 = 120
+
+//6. 120 can then be replaced with hidden(6) to produce:
+	// function mystery4(bonus) {
+  //  return 120 + bonus;
+  // }
+  //  return mystery4;
+  // }
+  
+ // 7. As we previously established jumble = function mystery4(bonus) {
+  //  return 120 + bonus;
+  // }
+  //  return mystery4;
+ //   replace bonus with 2 per jumble(2) to get the final output of 120 + 2 = 122
+ // 8. The result variable stores 122
+ // 9. alert(122);
