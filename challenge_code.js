@@ -1,3 +1,7 @@
+var hidden = mystery(3);
+var jumble = mystery3(hidden);
+var result = jumble(2);
+
 function mystery(input) {
   var secret = 4;
   input += 2;
@@ -14,7 +18,3 @@ function mystery3(param) {
   }
   return mystery4;
 }
-
-var hidden = mystery(3);
-var jumble = mystery3(hidden);
-var result = jumble(2);
